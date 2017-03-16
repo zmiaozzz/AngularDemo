@@ -1,0 +1,42 @@
+/*指令div容器*/
+.dropdown-button {
+	position: relative;
+	width: 120px;
+	height: 100%;
+}
+/*button*/
+.dropdown {
+	display: block;
+	width: 100%;
+	background-color: #FFF;
+	border: 2px solid #EEE;
+}
+/*显示内容*/
+.displayName {
+	display: inline-block;
+	float: left;
+	text-align: left;
+}
+/*下拉小三角*/
+.caret {
+	display: inline-block;
+	float: right;
+	margin-top: 8px;
+}
+/*下拉框*/
+.dropdown-menu {
+	display: block;
+	position: absolute;
+	top: 34px;
+	left: 0;
+}
+.dropdown-menu li {
+	list-style: none;
+	padding: 3px 12px;
+	font-size: 14px;
+}
+.dropdown-menu li:hover {
+	cursor: pointer;
+	background: #EEE;
+}
+
