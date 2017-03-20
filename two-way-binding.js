@@ -36,13 +36,12 @@ Scope.prototype = {
         } while (dirty)
     },
     $$digestOnce: function () {
-        var self = this;
         var dirty;
         this.$$watchers.forEach(function (watch) {
-            var newValue = watch.watchFn(self);
+            var newValue = watch.watchFn();
             var oldValue = watch.last;
             if (newValue !== oldValue) {
-                watch.listenerFn(newValue, oldValue, self);
+                watch.listenerFn(newValue, oldValue);
                 dirty = true;
                 watch.last = newValue;
             }
