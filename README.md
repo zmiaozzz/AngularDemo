@@ -1,2 +1,7 @@
-# AngularDemo
-angular相关学习代码
+﻿# AngularDemo
+本项目为相关Angular学习代码。
+
+ - AngularDI.js：Angular依赖注入基本原理
+ - two-way-binding：Angular双向绑定基本原理
+ - directive-demo：Angular下拉框指令，直接打开angular.html可看到下拉框
+
