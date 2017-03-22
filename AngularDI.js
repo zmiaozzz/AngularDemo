@@ -28,7 +28,7 @@ var DI = {
         for (var i = 0, len = $inject.length; i < len; i++) {
             args.push(this.providerCache[$inject[i]]);
         }
-        if (isArray(fn)) {
+        if (util.isArray(fn)) {
             fn = fn[len];
         }
         //注入
@@ -44,28 +44,32 @@ var DI = {
             args = [],
             FUNC_ARGS = /^function\s*[^(]*\(\s*([^)]*)\s*\)/m,
             FUNC_ARG_SPLIT = /,\s*/;
-        if (isFunction(fn)) {
+        if (util.isFunction(fn)) {
             args = fnString.match(FUNC_ARGS)[1].split(FUNC_ARG_SPLIT);
         }
-        else if (isArray(fn)) {
+        else if (util.isArray(fn)) {
             args = fn.slice(0, fn.length - 1);
         }
         return args;
     }
-}
+};
 
+/**
+ * 工具
+ */
+var util = {
+    isFunction: function (fn) {
+        return typeof fn === 'function';
+    },
+    isArray: function (arr) {
+        return Object.prototype.toString.call(arr) === '[object Array]';
+    }
+};
 
 
 /**
  * ******************************* 例子 ********************************
  */
-function isFunction(fn) {
-    return typeof fn === 'function';
-}
-function isArray(arr) {
-    return Object.prototype.toString.call(arr) === '[object Array]';
-}
-
 /**
  * provider定义方法
  * @param name
@@ -85,18 +89,21 @@ function registerController(name, fn) {
     DI.inject(fn);
 }
 
+// 注册provider1,
 registerProvider('provider1', function () {
     return {
         provider1: 'foo'
     }
 })
 
+// 注册provider2，注入provider1
 registerProvider('provider2', function (provider1) {
     return {
         provider2: provider1.provider1 + ' bar'
     }
 })
 
+// 注册controller，注入provider2
 registerController('controller', ['provider2', function (provider2) {
     console.log(provider2.provider2);
 }])
