@@ -1,23 +1,23 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<meta charset="UTF-8">
-	<title>angularjs指令</title>
-	<!-- dependencies -->
-	<link rel="stylesheet" href="dep/bootstrap.css">
+    <meta charset="UTF-8">
+    <title>angularjs指令</title>
+    <!-- dependencies -->
+    <link rel="stylesheet" href="dep/bootstrap.css">
 
-	<!-- 通用自定义css文件 -->
-	<link rel="stylesheet" href="css/angular-test.css">
+    <!-- 通用自定义css文件 -->
+    <link rel="stylesheet" href="css/angular-test.css">
 
-	<script src="dep/require.js" data-main="main.js"></script>
+    <script src="dep/require.js" data-main="main.js"></script>
 
 </head>
 <body>
-	<!-- 下拉框示例 -->
-	<div ng-controller="dropdownCtrl">
-		<dropdown-button options="options.dropdown" value="data.dropdown"></dropdown-button>
-		<button class="btn btn-primary" ng-click="getData()">确定</button>
-	</div>
+<!-- 下拉框示例 -->
+<div ng-controller="dropdownCtrl">
+    <dropdown-button options="options.dropdown" value="data.dropdown"></dropdown-button>
+    <button class="btn btn-primary" ng-click="getData()">确定</button>
+</div>
 
 
 </body>

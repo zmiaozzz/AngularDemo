@@ -15,6 +15,5 @@ define(['angular'], function (angular) {
             console.log($scope.data);
         };
     }]);
-
     return app;
 })
