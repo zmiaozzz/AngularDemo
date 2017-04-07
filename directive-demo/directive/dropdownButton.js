@@ -9,7 +9,7 @@
  * selected可省略
  */
 define(['app'], function(app) {
-	app.directive('dropdownButton', function () {
+    app.directive('dropdownButton', function () {
 		return {
 			restrict: 'E',
 			replace: true,
